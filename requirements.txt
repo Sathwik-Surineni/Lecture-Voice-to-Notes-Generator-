@@ -21,3 +21,5 @@ streamlit-webrtc==0.47.1
 wordcloud
 reportlab
 matplotlib
+pydub==0.25.1
+pyaudioop>=0.1.1
