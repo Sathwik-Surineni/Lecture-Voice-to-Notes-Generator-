@@ -134,6 +134,14 @@ streamlit run web/app.py
 ~~~
 Then open in your browser: http://localhost:8501
 
+
+
+## Deployment Link 
+~~~
+https://sathwik-surineni-lecture-voice-to-notes-generator-webapp-twsgsx.streamlit.app/
+~~~
+
+
 ## 🔮 Future Improvements
 
 🌍 Support multi-language transcription
