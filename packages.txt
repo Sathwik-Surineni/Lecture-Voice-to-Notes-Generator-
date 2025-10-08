@@ -20,3 +20,4 @@ libavutil-dev
 libavfilter-dev
 libswscale-dev
 libswresample-dev
+ffmpeg
