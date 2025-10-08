@@ -1,13 +1,16 @@
 streamlit==1.38.0
+
+# STT stack
 faster-whisper==1.0.3
+ctranslate2==4.4.0
 onnxruntime==1.23.0
-pydub==0.25.1
 soundfile==0.12.1
+pydub==0.25.1
+ffmpeg-python==0.2.0
 numpy==1.26.4
 pandas==2.2.2
-pillow==10.4.0
-matplotlib==3.9.2
-wordcloud==1.9.3
-fpdf==1.7.2
-reportlab==4.2.2
-PyPDF2==3.0.1
+
+# If your app uses microphone / WebRTC:
+av==11.0.0
+aiortc==1.9.0
+streamlit-webrtc==0.47.1
