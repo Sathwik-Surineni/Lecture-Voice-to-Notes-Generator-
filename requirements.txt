@@ -1,4 +1,4 @@
-streamlit==1.38.0
+﻿streamlit==1.38.0
 
 # STT stack (works on Python 3.13 wheels)
 faster-whisper==1.0.3
