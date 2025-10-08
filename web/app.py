@@ -3,6 +3,10 @@ import os, sys, io, tempfile, time
 from typing import List, Dict
 import streamlit as st
 import numpy as np
+import matplotlib
+matplotlib.use("Agg")
+
+
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
