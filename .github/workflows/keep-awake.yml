@@ -1,0 +1,32 @@
+name: Keep Streamlit app awake
+
+# Run on a schedule and allow manual runs
+on:
+  schedule:
+    # Runs every 4 hours (UTC). Adjust cron if you want a different frequency.
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl Streamlit app (try 3 times if needed)
+        run: |
+          URL="https://sathwik-surineni-lecture-voice-to-notes-generator-webapp-twsgsx.streamlit.app/"
+          echo "Pinging $URL"
+          i=0
+          until [ $i -ge 3 ]
+          do
+            # -s silent, -S show error, -f fail on non-2xx, -L follow redirects, --max-time 30 seconds
+            curl -sSfL --max-time 30 "$URL" -o /dev/null && break
+            i=$((i+1))
+            echo "Attempt $i failed — retrying in 10s..."
+            sleep 10
+          done
+          if [ $i -ge 3 ]; then
+            echo "All attempts failed (this could be a temporary outage)."
+            # Exit 0 so the workflow doesn't mark as failed if it's just unreachable
+            exit 0
+          fi
+          echo "Ping successful."
